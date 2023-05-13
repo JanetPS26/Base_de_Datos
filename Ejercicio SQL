@@ -1,4 +1,5 @@
 # EJERCICIO 1
+
 CREATE DATABASE pilares;
 USE pilares;
 CREATE TABLE usuarios( 
@@ -43,3 +44,17 @@ CREATE TABLE pilares(
     folio_responsable1 CHAR(5),
    FOREIGN KEY (folio_responsable1)  REFERENCES responsable(folio_responsable)
 );
+CREATE TABLE grupo(
+  	codigo_taller1 CHAR(5),
+  	folio_usuario1 CHAR(5),
+ 	FOREIGN KEY (codigo_taller1) REFERENCES talleres(codigo_taller),
+  	FOREIGN KEY (folio_usuario1) REFERENCES usuarios(folio_usuario)
+  );
+  CREATE TABLE tallpil(
+  	folio_tallerista1 CHAR(5),
+  	codigo_pilares1 CHAR(5),
+ 	FOREIGN KEY (folio_tallerista1) REFERENCES talleristas(folio_tallerista),
+  	FOREIGN KEY (codigo_pilares1) REFERENCES pilares(codigo_pilares)
+  );
+ 
+ https://www.db-fiddle.com/f/gfGeVeVb9HkDyH7msKdT2L/0
