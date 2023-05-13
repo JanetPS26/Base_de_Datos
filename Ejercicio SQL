@@ -1,0 +1,45 @@
+# EJERCICIO 1
+CREATE DATABASE pilares;
+USE pilares;
+CREATE TABLE usuarios( 
+	folio_usuario CHAR(5) PRIMARY KEY,
+  	nombre_usuario VARCHAR(20),
+  	apellido_paterno_usuario VARCHAR(20),
+  	apellido_materno_usuario VARCHAR(20),
+  	direccion_usuario VARCHAR(20),
+  	correo_usuario VARCHAR(20),
+  	telefono_usuario CHAR(10)
+);
+CREATE TABLE talleres( 
+	codigo_taller CHAR(5) PRIMARY KEY,
+  	nombre_taller VARCHAR(20),
+  	duracion_taller VARCHAR(20),
+    horario_taller VARCHAR(20)
+);
+CREATE TABLE responsable( 
+	folio_responsable CHAR(5) PRIMARY KEY,
+  	nombre_responsable VARCHAR(20),
+	apellido_paterno_responsable VARCHAR(20),
+  	apellido_materno_responsable VARCHAR(20),
+    direccion_responsable VARCHAR(20),
+  	correo_responsable VARCHAR(20),
+  	telefono_responsable CHAR(10)
+);
+CREATE TABLE talleristas( 
+	folio_tallerista CHAR(5) PRIMARY KEY,
+  	nombre_tallerista VARCHAR(20),
+  	apellido_paterno_tallerista VARCHAR(20),
+  	apellido_materno_tallerista VARCHAR(20),
+    direccion_tallerista VARCHAR(20),
+  	correo_tallerista VARCHAR(20),
+  	telefono_tallerista CHAR(10),
+  	codigo_taller1 CHAR(5),
+   FOREIGN KEY (codigo_taller1) REFERENCES talleres(codigo_taller)
+);
+CREATE TABLE pilares( 
+	codigo_pilares CHAR(5) PRIMARY KEY,
+  	direccion_pilares VARCHAR(20),
+	nombre_pilares VARCHAR(20),
+    folio_responsable1 CHAR(5),
+   FOREIGN KEY (folio_responsable1)  REFERENCES responsable(folio_responsable)
+);
