@@ -206,8 +206,114 @@ INSERT INTO usuarios (folio_usuario, nombre_usuario, apellido_paterno_usuario, a
 INSERT INTO usuarios (folio_usuario, nombre_usuario, apellido_paterno_usuario, apellido_materno_usuario, edad_usuario, correo_usuario, telefono_usuario, direccion_usuario) VALUES ('1099', 'Rodrique', 'Glentworth', 'Bastick', 44, 'rbastick2q@amazon.de', '5308452940', '1 Gerald Place');
 INSERT INTO usuarios (folio_usuario, nombre_usuario, apellido_paterno_usuario, apellido_materno_usuario, edad_usuario, correo_usuario, telefono_usuario, direccion_usuario) VALUES ('1100', 'Aurora', 'Hassur', 'Waycot', 43, 'awaycot2r@sfgate.com', '3262086049', '8438 Orin Pass');
 
+INSERT INTO talleres VALUES ('CD001', 'Escuela de Código');
+INSERT INTO talleres VALUES ('DM001', 'Diseño de modas');
+INSERT INTO talleres VALUES ('HU001', 'Huertos Urbanos');
+INSERT INTO talleres VALUES ('CC001', 'Cocina');
+INSERT INTO talleres VALUES ('HR001', 'Herreria');
+INSERT INTO talleres VALUES ('CP001', 'Carpinteria');
+INSERT INTO talleres VALUES ('PT001', 'Pintura');
+
+#Modifico tamaño de direccion_tallerista
+ ALTER TABLE talleristas
+ CHANGE  direccion_tallerista  direccion_tallerista VARCHAR(100);
+
+#Modifico tamaño de direccion_tallerista
+ALTER TABLE pilares
+CHANGE  dirección_pilares  direccion_pilares VARCHAR(100);
+
+#Modifico tamaño de direccion_usuario y nombre del campo
+ALTER TABLE responsable
+CHANGE  direccion_usuario direccion_responsable CHAR(100);
+
+#TABLA RESPONSABLE
+INSERT INTO responsable VALUES ('RES1', 'Angela', 'Herrera', 'Perez', '3262086049', 'awaycot2r@pilares.gob', 'Calle 5 # 8 colonia centro, azcapotzalco');
+INSERT INTO responsable VALUES ('RES2', 'Miguel', 'Hernandez', 'Urbina', '5567456356', 'hernan@ pilares.gob', 'Calle pino # 18 colonia reforma, cuauhtemoc');
+INSERT INTO responsable VALUES ('RES3', 'Rosa', 'Benitez', 'Salas', '3262067534', 'rosa@ pilares.gob', 'Calle centro # 5 colonia aguilera, iztapalapa');
+INSERT INTO responsable VALUES ('RES4', 'Patricia', 'Torres', 'Piña', '5567564534', 'pina@pilares.gob', 'Calle morelos # 34 colonia insurgentes, gam');
+INSERT INTO responsable VALUES ('RES5', 'Pedro', 'Marquez', 'Quetzal', '5678675434', 'perez@pilares.gob', 'Calle revolucion # 89 colonia pensil, miguel hidalgo');
+
+
+#Tabla tallerista
+INSERT INTO talleristas VALUES ('TALL1', 'Pedro', 'Angeles', 'Perez', '5678675445', 'pedrotall@pilares.gob', 'Calle amapolas # 89 colonia Aquiles serdab, azcapotzalco', 'CD001');
+INSERT INTO talleristas VALUES ('TALL2', 'Beatriz', 'Fuentes', 'Martinez', '567786564', 'beatriztall@pilares.gob', 'Calle horcon # 34 colonia reforma social, iztapalapa', 'DM001');
+INSERT INTO talleristas VALUES ('TALL3', 'Pedro', 'Salas', 'Beltran', '9988675445', 'salastall@pilares.gob', 'Calle uno # 890 colonia petroleos, gam', 'HU001');
+INSERT INTO talleristas VALUES ('TALL4', 'Daniel', 'Salazar', 'Perez', '5677785445', 'danieltall@pilares.gob', 'Calle ampl garza# 19 colonia Anaxagoras, Miguel Hidalgo', 'CC001');
+INSERT INTO talleristas VALUES ('TALL5', 'Bautista', 'Petronilo', 'Angeles', '5678644545', 'bautistall@pilares.gob', 'Calle raynosa # 3 colonia Patria, iztapalapa', 'HR001');
+INSERT INTO talleristas VALUES ('TALL6', 'Antonio', 'Alatriste', 'Huitron', '5445675445', 'toniotall@pilares.gob', 'Calle popo # 456 colonia texpo, iztapalapa', 'CP001');
+INSERT INTO talleristas VALUES ('TALL7', 'Ernesto', 'Ermita', 'Onto', '5543675445', 'ernesttall@pilares.gob', 'Calle pescadores #67 colonia oficios, gam', 'PT001');
+
+
+#Tabla pilares
+INSERT INTO pilares VALUES ('PIL01', 'PILARES UNO', 'calle del recreo # 25, colonia rosario, azcapotzalco', 'RES1');
+INSERT INTO pilares VALUES ('PIL02', 'PILARES DOS', 'calle amores # 225, colonia reforma, Iztapalapa', 'RES2');
+INSERT INTO pilares VALUES ('PIL03', 'PILARES TRES', 'calle nezaa # 3, colonia ampliacion, gam', 'RES3');
+INSERT INTO pilares VALUES ('PIL04', 'PILARES CUATRO', 'calle herreros # 5, colonia revolucion, miguel hidalgo', 'RES4');
+INSERT INTO pilares VALUES ('PIL05', 'PILARES CINCO', 'calle ahuehuetes # 345, colonia angeles, iztapalapa', 'RES5');
+
+
+#TABLA TALLPIL
+INSERT INTO tallpil VALUES ('TALL1', 'PIL04');
+INSERT INTO tallpil VALUES ('TALL2', 'PIL04');
+INSERT INTO tallpil VALUES ('TALL3', 'PIL01');
+INSERT INTO tallpil VALUES ('TALL4', 'PIL05');
+INSERT INTO tallpil VALUES ('TALL5', 'PIL03');
+INSERT INTO tallpil VALUES ('TALL6', 'PIL02');
+INSERT INTO tallpil VALUES ('TALL7', 'PIL05');
+
+#se empiezan inscribir usuarios a los talleres
+
+INSERT INTO grupo VALUES('HR001','1002','GRUP1','9 A 11','2 MESES');
+INSERT INTO grupo VALUES('HR001','1003','GRUP1','9 A 11','2 MESES');
+INSERT INTO grupo VALUES('HR001','1004','GRUP1','9 A 11','2 MESES');
+INSERT INTO grupo VALUES('HR001','1005','GRUP1','9 A 11','2 MESES');
+INSERT INTO grupo VALUES('HR001','1006','GRUP1','9 A 11','2 MESES');
+INSERT INTO grupo VALUES('HR001','1007','GRUP1','9 A 11','2 MESES');
+INSERT INTO grupo VALUES('HR001','1008','GRUP1','9 A 11','2 MESES');
+INSERT INTO grupo VALUES('HR001','1009','GRUP1','9 A 11','2 MESES');
+INSERT INTO grupo VALUES('HR001','1010','GRUP1','9 A 11','2 MESES');
+INSERT INTO grupo VALUES('HR001','1011','GRUP1','9 A 11','2 MESES');
+INSERT INTO grupo VALUES('HR001','1012','GRUP1','9 A 11','2 MESES');
+
+INSERT INTO grupo VALUES('HR001','1013','GRUP2','12 A 02','4 MESES');
+INSERT INTO grupo VALUES('HR001','1003','GRUP2','12 A 02','4 MESES');
+INSERT INTO grupo VALUES('HR001','1014','GRUP2','12 A 02','4 MESES');
+INSERT INTO grupo VALUES('HR001','1015','GRUP2','12 A 02','4 MESES');
+INSERT INTO grupo VALUES('HR001','1006','GRUP2','12 A 02','4 MESES');
+INSERT INTO grupo VALUES('HR001','1017','GRUP2','12 A 02','4 MESES');
+INSERT INTO grupo VALUES('HR001','1008','GRUP2','12 A 02','4 MESES');
+INSERT INTO grupo VALUES('HR001','1019','GRUP2','12 A 02','4 MESES');
+INSERT INTO grupo VALUES('HR001','1020','GRUP2','12 A 02','4 MESES');
+INSERT INTO grupo VALUES('HR001','1011','GRUP2','12 A 02','4 MESES');
+INSERT INTO grupo VALUES('HR001','1012','GRUP2','12 A 02','4 MESES');
+
+
+INSERT INTO grupo VALUES('CD001','1013','GRUP1','9 A 12','240 DIAS');
+INSERT INTO grupo VALUES('CD001','1014','GRUP1','9 A 12','240 DIAS');
+INSERT INTO grupo VALUES('CD001','1015','GRUP1','9 A 12','240 DIAS');
+INSERT INTO grupo VALUES('CD001','1016','GRUP1','9 A 12','240 DIAS');
+INSERT INTO grupo VALUES('CD001','1017','GRUP1','9 A 12','240 DIAS');
+INSERT INTO grupo VALUES('CD001','1018','GRUP1','9 A 12','240 DIAS');
+INSERT INTO grupo VALUES('CD001','1003','GRUP1','9 A 12','240 DIAS');
+INSERT INTO grupo VALUES('CD001','1020','GRUP1','9 A 12','240 DIAS');
+INSERT INTO grupo VALUES('CD001','1011','GRUP1','9 A 12','240 DIAS');
+INSERT INTO grupo VALUES('CD001','1021','GRUP1','9 A 12','240 DIAS');
+INSERT INTO grupo VALUES('CD001','1022','GRUP1','9 A 12','240 DIAS');
+
+INSERT INTO grupo VALUES('CD001','1023','GRUP5','2 A 6','110 DIAS');
+INSERT INTO grupo VALUES('CD001','1024','GRUP5','2 A 6','110 DIAS');
+INSERT INTO grupo VALUES('CD001','1015','GRUP5','2 A 6','110 DIAS');
+INSERT INTO grupo VALUES('CD001','1016','GRUP5','2 A 6','110 DIAS');
+INSERT INTO grupo VALUES('CD001','1025','GRUP5','2 A 6','110 DIAS');
+INSERT INTO grupo VALUES('CD001','1026','GRUP5','2 A 6','110 DIAS');
+INSERT INTO grupo VALUES('CD001','1027','GRUP5','2 A 6','110 DIAS');
+INSERT INTO grupo VALUES('CD001','1028','GRUP5','2 A 6','110 DIAS');
+INSERT INTO grupo VALUES('CD001','1029','GRUP5','2 A 6','110 DIAS');
+INSERT INTO grupo VALUES('CD001','1030','GRUP5','2 A 6','110 DIAS');
+INSERT INTO grupo VALUES('CD001','1031','GRUP5','2 A 6','110 DIAS');
+
                          
 
-
+https://www.db-fiddle.com/f/4RyY4e7J2TBkhiwVp8Bp5x/0
  https://www.db-fiddle.com/f/fS69fPVAR4uymZdY2CsqXe/0
  https://www.db-fiddle.com/f/gfGeVeVb9HkDyH7msKdT2L/0
