@@ -312,7 +312,7 @@ INSERT INTO grupo VALUES('CD001','1029','GRUP5','2 A 6','110 DIAS');
 INSERT INTO grupo VALUES('CD001','1030','GRUP5','2 A 6','110 DIAS');
 INSERT INTO grupo VALUES('CD001','1031','GRUP5','2 A 6','110 DIAS');
 
-10-06-2023 BD CON TRIGGER https://www.db-fiddle.com/f/s8W4GhRZ4BM1ictQ9PK3Up/0
+# 10-06-2023 BD CON TRIGGER https://www.db-fiddle.com/f/s8W4GhRZ4BM1ictQ9PK3Up/1
 # 03-06-2023 BD CON JOIN https://www.db-fiddle.com/f/4RyY4e7J2TBkhiwVp8Bp5x/6
 # https://www.db-fiddle.com/f/4RyY4e7J2TBkhiwVp8Bp5x/3 BASE DE DATOS CON CONSULTAS
 # Esta es mi base https://www.db-fiddle.com/f/4RyY4e7J2TBkhiwVp8Bp5x/2                         
